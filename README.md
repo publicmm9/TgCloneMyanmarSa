@@ -5,4 +5,4 @@
 - https://github.com/xyou365/AutoRclone
 - https://github.com/kzinthant-kas/Telegram-CloneBot
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/drzawlinmg/TgCloneBot4Myanmar)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/publicmm9/TgCloneMyanmarSa)

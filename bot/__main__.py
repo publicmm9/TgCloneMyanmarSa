@@ -21,8 +21,8 @@ def start(update, context):
 
 @run_async
 def helper(update, context):
-    sendMessage("Here are the available commands of the bot\n\n" \
-        "*Usage:* `/clone <link> [DESTINATION_ID]`\n*Example:* \n1. `/clone https://drive.google.com/drive/u/1/folders/0AO-ISIXXXXXXXXXXXX`\n2. `/clone 0AO-ISIXXXXXXXXXXXX`" \
+    sendMessage("မင်္ဂလာပါ ဒီ 🤖 🤖 လေးမှာအသုံးပြုလိုရတဲ့ commands များကိုအောက်မှာလေ့လာနိုင်ပါတယ်..အရင်ဆုံး thantzinmyotelbot@googlegroups.com ကို ကူးမဲ့ Drive ရယ် လက်ခံမည့် Drive မှာ content manager အပ်ထားပေးပါ။\n\n" \
+        "*အသုံးပြုနည်း:* `/clone <link> [DESTINATION_ID]`\n*Example:* \n1. `/clone https://drive.google.com/drive/u/1/folders/0AO-ISIXXXXXXXXXXXX`\n2. `/clone 0AO-ISIXXXXXXXXXXXX`" \
             "\n*DESTIONATION_ID* is optional. It can be either link or ID to where you wish to store a particular clone." \
             "\n\nYou can also *ignore folders* from clone process by doing the following:\n" \
                 "`/clone <FOLDER_ID> [DESTINATION] [id1,id2,id3]`\n In this example: id1, id2 and id3 would get ignored from cloning\nDo not use <> or [] in actual message." \
@@ -67,9 +67,9 @@ def sendCloneStatus(update, context, status, msg, link):
     while not status.done():
         sleeper(3)
         try:
-            text=f'🔗 *Cloning:* [{status.MainFolderName}]({status.MainFolderLink})\n━━━━━━━━━━━━━━\n🗃️ *Current File:* `{status.get_name()}`\n⬆️ *Transferred*: `{status.get_size()}`\n📁 *Destination:* [{status.DestinationFolderName}]({status.DestinationFolderLink})'
+            text=f'🔗 *ကူးနေခြင်း:* [{status.MainFolderName}]({status.MainFolderLink})\n━━━━━━━━━━━━━━\n🗃️ *ကူးနေသောဖိုင်:* `{status.get_name()}`\n⬆️ *မိမိ Driveထဲရောက်သွားသောပမာဏ*: `{status.get_size()}`\n📁 *မိမိDriveမှFolder:* [{status.DestinationFolderName}]({status.DestinationFolderLink})'
             if status.checkFileStatus():
-                text += f"\n🕒 *Checking Existing Files:* `{str(status.checkFileStatus())}`"
+                text += f"\n🕒 *ရှိပြီးသားဖိုင်များကိုစစ်ဆေးခြင်း:* `{str(status.checkFileStatus())}`"
             if not text == old_text:
                 msg.edit_text(text=text, parse_mode="Markdown", timeout=200)
                 old_text = text

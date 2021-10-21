@@ -67,9 +67,9 @@ def sendCloneStatus(update, context, status, msg, link):
     while not status.done():
         sleeper(3)
         try:
-            text=f'🔗 *Cloning:* [{status.MainFolderName}]({status.MainFolderLink})\n━━━━━━━━━━━━━━\n🗃️ *Current File:* `{status.get_name()}`\n⬆️ *Transferred*: `{status.get_size()}`\n📁 *Destination:* [{status.DestinationFolderName}]({status.DestinationFolderLink})'
+            text=f'🔗 *ကူးနေခြင်း:* [{status.MainFolderName}]({status.MainFolderLink})\n━━━━━━━━━━━━━━\n🗃️ *ကူးနေသောဖိုင်:* `{status.get_name()}`\n⬆️ *မိမိ Driveထဲရောက်သွားသောပမာဏ*: `{status.get_size()}`\n📁 *မိမိDriveမှFolder:* [{status.DestinationFolderName}]({status.DestinationFolderLink})'
             if status.checkFileStatus():
-                text += f"\n🕒 *Checking Existing Files:* `{str(status.checkFileStatus())}`"
+                text += f"\n🕒 *ရှိပြီးသားဖိုင်များကိုစစ်ဆေးခြင်း:* `{str(status.checkFileStatus())}`"
             if not text == old_text:
                 msg.edit_text(text=text, parse_mode="Markdown", timeout=200)
                 old_text = text
